@@ -85,3 +85,16 @@
 //    console.log(i);
 // }
 // console.log("After the loop ends, i is " + i);
+
+// Break and Continue:
+var string = "";
+for (var i = 0; i < 8; i++) {
+    var word = prompt("Let's make a sentence");
+    if (word === "curses") {
+        console.log("This is a respectable program!");
+        break;
+        continue;
+    }
+    string = string + " " + word;
+    console.log(string)
+}
