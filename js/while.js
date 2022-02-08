@@ -9,16 +9,19 @@
 
 //Do-While:
 
-var allCones = Math.floor(Math.random() * 50) + 50;
-var conesBought;
-do {
-    conesBought = Math.floor(Math.random() * 5) + 1;
-    if (conesBought > allCones) {
-        console.log(("Cannot sell you " + conesBought + " I only have " + allCones));;
-    } else {
-        console.log(conesBought + " cones sold...");
-        allCones = allCones - conesBought;
-    }
-} while(allCones > 0);
-console.log("Yay! I sold them all");
+// var allCones = Math.floor(Math.random() * 50) + 50;
+// var conesBought;
+// do {
+//     conesBought = Math.floor(Math.random() * 5) + 1;
+//     if (conesBought > allCones) {
+//         console.log(("Cannot sell you " + conesBought + " I only have " + allCones));;
+//     } else {
+//         console.log(conesBought + " cones sold...");
+//         allCones = allCones - conesBought;
+//     }
+// } while(allCones > 0);
+// console.log("Yay! I sold them all");
+
+//For Loops:
+
 
