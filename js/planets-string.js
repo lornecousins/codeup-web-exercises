@@ -29,6 +29,6 @@
     // Mercury<br>Venus<br>Earth<br>Mars<br>Jupiter<br>Saturn<br>Uranus<br>Neptune
 //bonus
     var output = '<ul><li>' + planetsArray.join('</li><li>') + '</li></ul>';
-    document.write(planetsArray);
+    document.write(output);
 
 })();
