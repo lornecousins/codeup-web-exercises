@@ -70,3 +70,23 @@ console.log(first(array));
 console.log(second(array));
 console.log(last(array));
 })();
+
+// walk-thru:
+//     var names = ['Lorne', 'Oscar', 'Deon', 'Alfred'];
+//
+//     function first(array) {
+// console.log(array[0]);
+// }
+// first(names);
+//
+// function second(array){
+//     console.log(array[1]);
+// }
+//     second(names);
+//
+// function last(array) {
+//     console.log(array[3]);
+// }
+// last(names);
+//
+// })

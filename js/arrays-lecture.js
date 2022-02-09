@@ -50,8 +50,66 @@
 // }
 
 // forEach Loop:
-var prices = [32.99, 21.99, 6.99, 4.99, 12.99, 8.98, 5.99];
+// var prices = [32.99, 21.99, 6.99, 4.99, 12.99, 8.98, 5.99];
+//
+// prices.forEach(function(price, index){
+//     console.log("Item number " + (index + 1) + " costs $" + price)
+// })
 
-prices.forEach(function(price, index){
-    console.log("Item number " + (index + 1) + " costs $" + price)
-})
+//Manipulating Arrays:
+// var groceryList = ['bread', 'eggs', 'butter', 'milk'];
+//
+// groceryList.push("potatoes")
+// console.log(groceryList);
+// groceryList.pop();
+// console.log(groceryList);
+//
+// groceryList.unshift("sliced cheddar");
+// console.log(groceryList);
+// groceryList.shift();
+// console.log(groceryList);
+//
+// var indexOfButter = groceryList.indexOf("butter");
+// console.log("The butter is at index " + indexOfButter);
+//
+// groceryList[2] = "peanut butter";
+// console.log(groceryList);
+// groceryList[indexOfButter] = "butter;"
+// console.log(groceryList);
+//
+// var firstHalfOfList = groceryList.slice(0, 2);
+// console.log(firstHalfOfList);
+// console.log(groceryList);
+//
+// var secondHalfOfList = groceryList.slice(2);
+// console.log(secondHalfOfList);
+// firstHalfOfList.push("peanut butter");
+// console.log(firstHalfOfList);
+// groceryList = firstHalfOfList.concat(secondHalfOfList);
+// console.log(groceryList);
+//
+// groceryList.reverse();
+// console.log(groceryList);
+// groceryList.sort();
+// console.log(groceryList);
+
+//Splitting and Joining Arrays:
+
+var hamletQuote = "To be or not to be, that is the question";
+var noCommasHamletQuote = hamletQuote.replace(',', '').toLowerCase();
+var hamletQuoteArray = noCommasHamletQuote.split(' ');
+console.log(hamletQuoteArray);
+
+hamletQuoteArray.reverse();
+console.log(hamletQuoteArray);
+
+var hamletQuoteBackwards = hamletQuoteArray.join(' ');
+console.log(hamletQuoteBackwards);
+
+var hamletQuoteWordList = hamletQuoteArray.join(',');
+console.log(hamletQuoteWordList);
+var bringBackTheOriginal = hamletQuoteWordList.replaceAll(',', ' ');
+var theOriginalArray = bringBackTheOriginal.split(" ");
+theOriginalArray.reverse();
+var theOriginalQuote = theOriginalArray.join(' ');
+console.log(theOriginalQuote);
