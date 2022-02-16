@@ -1,0 +1,69 @@
+h1 {
+    color: purple;
+    text-decoration: underline;
+    text-align: center;
+}
+
+header {
+    color: crimson;
+    text-decoration: underline;
+    text-align: center;
+}
+
+h1, h2 {
+    color: crimson;
+    text-decoration: underline;
+}
+
+body {
+    background-color: bisque;
+}
+
+body {
+    background-image: url(../images/constellation.jpg);
+    background-attachment: fixed;
+}
+
+body {
+    color: antiquewhite;
+}
+
+ul li {
+    list-style-type: square;
+}
+
+body {
+    font-family: "Times New Roman";
+}
+
+table, td, tr {
+    padding: 20px ;
+    font-size: larger;
+}
+
+a:link {
+    color: yellow;
+}
+
+a:visited {
+    color: darkgreen;
+}
+
+a:hover {
+    color: white;
+    background: red;
+}
+
+section {
+    text-align: center;
+}
+
+table {
+   margin: auto;
+    /*border: thin solid red;*/
+}
+
+td, th {
+    border: thin solid red;
+}
+

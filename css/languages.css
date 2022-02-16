@@ -1,0 +1,26 @@
+li {
+    color: darkslategrey;
+}
+
+/*.declarative {*/
+/*    color: rgb(102, 51, 153);*/
+/*}*/
+
+ul li {
+    list-style-type: square;
+}
+
+ol li {
+    list-style-type: -moz-simp-chinese-informal;
+    list-style-type: lower-roman;
+}
+
+.programming {
+    color: #064406;
+}
+
+.query {
+   color: mediumorchid;
+}
+
+

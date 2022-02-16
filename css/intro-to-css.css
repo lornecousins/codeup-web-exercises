@@ -1,0 +1,37 @@
+body{
+    background-color: antiquewhite;
+    font-family: sans-serif;
+}
+
+h1, h2, h3 {
+    color: cornflowerblue;
+}
+
+h3 {
+    font-size: 22px;
+}
+table {
+    font: 18px sans-serif bold;
+    text-align: center;
+}
+
+th {
+    font-weight: bold;
+}
+
+a:link {
+    color: #007e7e;
+}
+
+a:visited {
+    color: #333333;
+}
+
+a:hover {
+    color: #0d5353;
+    background: #f88396;
+}
+
+/*a:focus {*/
+/*    color: #f88396;*/
+/*}*/
