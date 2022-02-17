@@ -1,0 +1,70 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+
+/*.message-info {*/
+/*    border: 1px solid #d6d9dd;*/
+/*    color: #5d5cae;*/
+/*    background-color: #cddeff;*/
+/*    width: 671px;*/
+/*    border-radius: 3px;*/
+/*    margin: 8px 8px;*/
+/*}*/
+
+/*.message-success {*/
+/*    border: 1px solid #d6d9dd;*/
+/*    color: #2c804f;*/
+/*    background-color: #cff3da;*/
+/*    width: 671px;*/
+/*    border-radius: 3px;*/
+/*    margin: 8px 8px*/
+/*}*/
+
+/*.message-warning {*/
+/*    border: 1px solid #d6d9dd;*/
+/*    color: #a09033;*/
+/*    background-color: #fcfbc9;*/
+/*    width: 671px;*/
+/*    border-radius: 3px;*/
+/*    margin: 8px 8px*/
+/*}*/
+
+/*.message-error {*/
+/*    border: 1px solid #d6d9dd;*/
+/*    color: #9d4258;*/
+/*    background-color: #fad3d7;*/
+/*    width: 671px;*/
+/*    border-radius: 3px;*/
+/*    margin: 8px 8px*/
+/*}*/
+/*walthru:*/
+.message {
+    background: grey;
+    border: 1px solid grey;
+    margin: 1em;
+    padding: 1em;
+    border-radius: .4em;
+}
+.message-info {
+    color: #5d5cae;
+    background: #cddeff;
+}
+
+.message-success{
+    color: #2c804f;
+    background: #cff3da;
+}
+
+.message-warning {
+    color: #a09033;
+    background: #fcfbc9;
+}
+
+.message-error {
+    color: #9d4258;
+    background: #fad3d7;
+}
