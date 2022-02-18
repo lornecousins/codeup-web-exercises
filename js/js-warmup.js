@@ -98,18 +98,86 @@ console.log(createUserMsg(user));
 //Bonus: if the input is not a number or
 //numeric string, return false.
 
-const areaOrPerimeter = function(l,w) {
-    if (isNaN(parseFloat(l)) ||  isNaN(parseFloat(w))) {
-        return false;
-    } if ((l == w)) {
-        return l*w;
-    } else {
-        return (l*2)+(w*2);
-    }
+// const areaOrPerimeter = function(l,w) {
+//     if (isNaN(parseFloat(l)) ||  isNaN(parseFloat(w))) {
+//         return false;
+//     } if ((l == w)) {
+//         return l*w;
+//     } else {
+//         return (l*2)+(w*2);
+//     }
+// }
+// console.log(areaOrPerimeter(6,10));
+// console.log(areaOrPerimeter(3,3));
+// console.log(areaOrPerimeter(12, 20));
+// console.log(areaOrPerimeter(20, 20));
+// console.log(areaOrPerimeter("14", 6));
+// console.log(areaOrPerimeter(null, 7));
+
+//write a function, sumTheStrings
+//it should take 2 numeric strings as input
+//it should add the numbers
+//and output the sum **as a string**
+
+//bonus: return false if the arguments
+//are anything other than numeric strings
+
+// function sumTheStrings(str1, str2) {
+//     if (str1 === '') {
+//         return str1 = 0;
+//     } if (str2 === '') {
+//         return str2 = 0;
+//     }
+//
+//     if (typeof str1 !== 'string' || typeof str2 !== 'string' || isNaN(parseFloat(str1) || isNaN(parseFloat(str2)))) {
+//         return false;
+//     } else {
+//         return Number(str1) + Number(str2).toString();
+//     }
+// }
+
+// //Return the slope of the line through p1,p2
+// function getSlope([num1, num2], [num3, num4]) {
+//     if (num4 === num2) || (num3 === num1)) {
+//         return null;
+//     } else {
+//     return (num4-num2, num3-num1);
+//     }
+// }
+
+//Write a function, getSimpleUser, that takes in a user object and returns a simplified user object.
+// Assume the following shape of the user object for the function input:
+//{
+//   firstName: '...',
+//   lastName: '...',
+//   email: '...',
+//   username: '...',
+//   password: '...'
+// }
+// The shape of the output should be the following:
+// {
+//   firstName: '...',
+//   lastName: '...',
+// }
+// Regardless of the case of the first name and last name input, the output should be in all lower case.
+var fred = {
+  firstName: 'Fred',
+  lastName: 'Smith',
+  email: 'fred@email.com',
+  username: 'fred123',
+  password: 'pass123'
 }
-console.log(areaOrPerimeter(6,10));
-console.log(areaOrPerimeter(3,3));
-console.log(areaOrPerimeter(12, 20));
-console.log(areaOrPerimeter(20, 20));
-console.log(areaOrPerimeter("14", 6));
-console.log(areaOrPerimeter(null, 7));
+// getSimpleUser(fred) // {firstName: 'fred', lastName: 'smith'}
+// function getSimpleUser(fred) {
+//     return "firstName: " + fred.firstName.toLowerCase() + "," + "\n" + "lastName: " + fred.lastName.toLowerCase() + ","
+// }
+//
+// console.log(getSimpleUser(fred));
+//walkthru:
+function getSimpleUser(user) {
+return {
+    firstName:  user.firstName.toLowerCase(),
+    lastName: user.lastName.toLowerCase()
+}
+}
+console.log(getSimpleUser(fred));
