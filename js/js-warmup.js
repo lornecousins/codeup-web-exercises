@@ -75,19 +75,19 @@
 // If jbomb were not an admin, the message should display...
 // ‘User jbomb is not an admin and can be reached at john@email.com’
 
-var user = {
-    username: 'jbomb',
-    email: 'john@email.com',
-    isAdmin: false
-};
-
-function  createUserMsg(user) {
-    if (user.isAdmin) {
-        return "User " + user.username + " is an admin and can be reached at " + user.email
-    }
-    return "User " + user.username + " is not an admin and can be reached at " + user.email;
-}
-console.log(createUserMsg(user));
+// var user = {
+//     username: 'jbomb',
+//     email: 'john@email.com',
+//     isAdmin: false
+// };
+//
+// function  createUserMsg(user) {
+//     if (user.isAdmin) {
+//         return "User " + user.username + " is an admin and can be reached at " + user.email
+//     }
+//     return "User " + user.username + " is not an admin and can be reached at " + user.email;
+// }
+// console.log(createUserMsg(user));
 
 //2/16/22 warmup:
 //Write a function that takes to parameters,
@@ -174,10 +174,80 @@ var fred = {
 //
 // console.log(getSimpleUser(fred));
 //walkthru:
-function getSimpleUser(user) {
-return {
-    firstName:  user.firstName.toLowerCase(),
-    lastName: user.lastName.toLowerCase()
+// function getSimpleUser(user) {
+// return {
+//     firstName:  user.firstName.toLowerCase(),
+//     lastName: user.lastName.toLowerCase()
+// }
+// }
+// console.log(getSimpleUser(fred));
+//
+// Create a function, analyzeArray, that takes in a an array and returns an object with information about the passed array. The function should return an object with properties containing information about the array, including the lengthOfArray, containsAllStrings, and the combineResult of adding all elements together.
+// analyzeArray([1, 2, 3]) returns...
+// {
+//     lengthOfArray: 3,
+//         containsAllStrings: false,
+//     combineResult: 6
+// }
+// analyzeArray([‘a’, ‘b’, ‘c’]) returns...
+// {
+//     lengthOfArray: 3,
+//         containsAllStrings: true,
+//     combineResult: ‘abc’
+// }
+// analyzeArray([‘bob’, 100, null]) returns...
+// {
+//     lengthOfArray: 3,
+//         containsAllStrings: true,
+//     combineResult: ‘bob123null’
+// }
+// function analyzeArray([in1, in2, in3]) {
+//     var lengthOfArray = array.length;
+//     var containsAllStrings = (in1, in2, in3) === "string";
+//     var combineResult = (in1, in2, in3) === in1 + in2 + in3;
+//     return "lengthOfArray: " + lengthOfArray + "," + "\n" + "containsAllStrings: " + containsAllStrings + "," + "\n" + "combineResult: " + combineResult
+// }
+//
+// console.log(analyzeArray([1, 2, 3]));
+// console.log(analyzeArray([‘a’,‘b’,‘c’]));
+// console.log(analyzeArray([‘bob’, 100, null]));
+
+//2/22 Warmup:
+// Create a function, createNames, that takes in an array of first names and an array of last names. The function should return an array of name objects with firstName and lastName properties with the input array values. Assume both input arrays are not empty, the same length and only contain string elements.
+
+// createNames(firstNames, lastNames) // returns...
+
+    // [
+    // {
+    //     firstName: 'CJ',
+    //     lastName: 'Cat'
+    // },
+    //     {
+    //         firstName: 'Max',
+    //         lastName: 'Feline'
+    //     },
+    //     {
+    //         firstName: 'Claude',
+    //         lastName: 'Kitten'
+    //     },
+    //     {
+    //         firstName: 'Meowmeow',
+    //         lastName: 'Calico'
+    //     }
+    // ]
+
+// HINT: a solution may involve using a for loop to iterate over the length of one array to push each name object onto an array of name objects that will be returned from the function.
+function createNames(arr1, arr2) {
+    var output = [];
+    for (var i = 0; i < arr1.length; i += 1) {
+        output.push({
+            firstname: arr1[i],
+            lastName: arr2[i]
+        });
+    }
+    return output;
 }
-}
-console.log(getSimpleUser(fred));
+var firstNames = ['CJ', 'Max', 'Claude', 'Meowmeow'];
+var lastNames = ['Cat', 'Feline', 'Kitten', 'Calico'];
+console.log(createNames(firstNames, lastNames));
+
