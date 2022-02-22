@@ -50,6 +50,32 @@
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320}
     ];
+
+//Walkthru with Justin
+// 'USERNAME purchased AMOUNT and received a DISCOUNT and will pay (AMOUNT - DISCOUNT)'
+// 'Cameron purhased 180 and received a discount of 0 and will pay 180'
+//'Ryan purchased 250 and reeived a discount of 30 and will pay 220'
+//George purchased 320 and receeived a discount of 38.4 and will pay 281.6'
+
+//For loop:
+// for (var i = 0; i < shoppers.length; i = i + 1) {
+//     var discount = (shoppers[i].amount > 200) ? shoppers[i].amount * .12 : 0;
+//     var message = shoppers[i].name +
+//         ' purchased ' + shoppers[i].amount +
+//         ' and received a discount of ' + discount +
+//         ' and will pay ' + (shoppers[i].amount - discount);
+//     console.log(message);
+// }
+//ForEach loop:
+// shoppers.forEach(function(shopper) {
+//         var discount = (shoppers.amount > 200) ? shoppers.amount * .12 : 0;
+//         var message = shopper.name +
+//             ' purchased ' + shopper.amount +
+//             ' and received a discount of ' + discount +
+//             ' and will pay ' + (shopper.amount - discount);
+//         console.log(message);
+// })
+
     // shoppers.forEach(function(shopper) {
     //     var discountAmt = 0
     //     if (shopper.amount > 200) {
@@ -82,43 +108,43 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
-    var books = [
-        {
-            title: "The Salmon of Doubt",
-            author: {
-                firstName: 'Douglas',
-                lastName: 'Adams',
-            }
-        },
-        {
-            title: "My Life",
-            author: {
-                firstName: 'Lorne',
-                lastName: 'Cousins',
-            }
-        },
-        {
-            title: "Not the Momma!",
-            author: {
-                firstName: 'Baby',
-                lastName: 'Dinosaur',
-            }
-        },
-        {
-            title: "Getting Better",
-            author: {
-                firstName: 'Some',
-                lastName: 'Guy',
-            }
-        },
-        {
-            title: "Last One",
-            author: {
-                firstName: 'Bruce',
-                lastName: 'Lee',
-            }
-        }
-]
+//     var books = [
+//         {
+//             title: "The Salmon of Doubt",
+//             author: {
+//                 firstName: 'Douglas',
+//                 lastName: 'Adams',
+//             }
+//         },
+//         {
+//             title: "My Life",
+//             author: {
+//                 firstName: 'Lorne',
+//                 lastName: 'Cousins',
+//             }
+//         },
+//         {
+//             title: "Not the Momma!",
+//             author: {
+//                 firstName: 'Baby',
+//                 lastName: 'Dinosaur',
+//             }
+//         },
+//         {
+//             title: "Getting Better",
+//             author: {
+//                 firstName: 'Some',
+//                 lastName: 'Guy',
+//             }
+//         },
+//         {
+//             title: "Last One",
+//             author: {
+//                 firstName: 'Bruce',
+//                 lastName: 'Lee',
+//             }
+//         }
+// ]
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -150,6 +176,63 @@
 //     console.log('---');
 //
 // }
+
+// Walkthru with Justin:
+var books = [
+    {
+        title: "The Salmon of Doubt",
+        author: {
+            firstName: 'Douglas',
+            lastName: 'Adams',
+        }
+    },
+    {
+        title: "My Life",
+        author: {
+            firstName: 'Lorne',
+            lastName: 'Cousins',
+        }
+    },
+    {
+        title: "Not the Momma!",
+        author: {
+            firstName: 'Baby',
+            lastName: 'Dinosaur',
+        }
+    },
+    {
+        title: "Getting Better",
+        author: {
+            firstName: 'Some',
+            lastName: 'Guy',
+        }
+    },
+    {
+        title: "Last One",
+        author: {
+            firstName: 'Bruce',
+            lastName: 'Lee',
+        }
+    }
+]
+//For Loop:
+// for (var i = 0; i < books.length; i++) {
+//     var bookMsg = 'Book # ' + (i + 1) + '\n' +
+//         'Title: ' + books[i].title + '\n' +
+//         'Author: ' + books[i].author.firstName + ' ' + books[i].author.lastName + '\n' +
+//         '---';
+//     console.log(bookMsg);
+// }
+//forEach Loop:
+books.forEach(function(book, index) {
+    var bookMsg = 'Book # ' + (index + 1) + '\n' +
+        'Title: ' + book.title + '\n' +
+        'Author: ' + book.author.firstName + ' ' + book.author.lastName + '\n' +
+        '---' + '\n';
+console.log(bookMsg);f
+});
+
+
 
     /**
      * Bonus:
