@@ -1,4 +1,4 @@
-// var groceryList = ['bread', 'eggs', 'butter', 'milk'];
+var groceryList = ['bread', 'eggs', 'butter', 'milk'];
 // console.log(groceryList[2]);
 // console.log("I have to buy " + groceryList[0]);
 
@@ -26,8 +26,16 @@
 // }
 
 // mini-exercise: // Given an array
-// //     var cities = ["San Antonio", "Austin", "Dallas", "Houston"];
-// // First, create a for loop that generates the output:
+    var cities = ["San Antonio", "Austin", "Dallas", "Houston"];
+// // // First, create a for loop that generates the output:
+// for (i=0; i<cities.length; i++) {
+//     // console.log(cities[i]);
+//     console.log("Student number " + (i+1) + " lives in " + cities[i] + "!")
+// }
+// forEach:
+//     cities.forEach(function(city, index) {
+//         console.log("Student number " + (index+1) + " lives in " + city + "!")
+//     })
 // //     ```
 // // San Antonio
 // // Austin
@@ -50,15 +58,20 @@
 // }
 
 // forEach Loop:
-// var prices = [32.99, 21.99, 6.99, 4.99, 12.99, 8.98, 5.99];
-//
+var prices = [32.99, 21.99, 6.99, 4.99, 12.99, 8.98, 5.99];
+
 // prices.forEach(function(price, index){
 //     console.log("Item number " + (index + 1) + " costs $" + price)
 // })
+// For:
+// for(var i = 0; i < prices.length; i++) {
+//     console.log("Itme number " + (i+1) + " costs " + prices[i]);
+// }
+
 
 //Manipulating Arrays:
-// var groceryList = ['bread', 'eggs', 'butter', 'milk'];
-//
+var groceryList = ['bread', 'eggs', 'butter', 'milk'];
+
 // groceryList.push("potatoes")
 // console.log(groceryList);
 // groceryList.pop();
@@ -70,18 +83,18 @@
 // console.log(groceryList);
 //
 // var indexOfButter = groceryList.indexOf("butter");
-// console.log("The butter is at index " + indexOfButter);
-//
-// groceryList[2] = "peanut butter";
+// // console.log("The butter is at index " + indexOfButter);
+// //
+// // groceryList[2] = "peanut butter";
+// // console.log(groceryList);
+// groceryList[indexOfButter] = "butter"
 // console.log(groceryList);
-// groceryList[indexOfButter] = "butter;"
-// console.log(groceryList);
 //
-// var firstHalfOfList = groceryList.slice(0, 2);
+var firstHalfOfList = groceryList.slice(0, 2);
 // console.log(firstHalfOfList);
 // console.log(groceryList);
 //
-// var secondHalfOfList = groceryList.slice(2);
+var secondHalfOfList = groceryList.slice(2);
 // console.log(secondHalfOfList);
 // firstHalfOfList.push("peanut butter");
 // console.log(firstHalfOfList);
@@ -95,21 +108,21 @@
 
 //Splitting and Joining Arrays:
 
-var hamletQuote = "To be or not to be, that is the question";
-var noCommasHamletQuote = hamletQuote.replace(',', '').toLowerCase();
-var hamletQuoteArray = noCommasHamletQuote.split(' ');
-console.log(hamletQuoteArray);
-
-hamletQuoteArray.reverse();
-console.log(hamletQuoteArray);
-
-var hamletQuoteBackwards = hamletQuoteArray.join(' ');
-console.log(hamletQuoteBackwards);
-
-var hamletQuoteWordList = hamletQuoteArray.join(',');
-console.log(hamletQuoteWordList);
-var bringBackTheOriginal = hamletQuoteWordList.replaceAll(',', ' ');
-var theOriginalArray = bringBackTheOriginal.split(" ");
-theOriginalArray.reverse();
-var theOriginalQuote = theOriginalArray.join(' ');
-console.log(theOriginalQuote);
+// var hamletQuote = "To be or not to be, that is the question";
+// var noCommasHamletQuote = hamletQuote.replace(',', '').toLowerCase();
+// var hamletQuoteArray = noCommasHamletQuote.split(' ');
+// console.log(hamletQuoteArray);
+//
+// hamletQuoteArray.reverse();
+// console.log(hamletQuoteArray);
+//
+// var hamletQuoteBackwards = hamletQuoteArray.join(' ');
+// console.log(hamletQuoteBackwards);
+//
+// var hamletQuoteWordList = hamletQuoteArray.join(',');
+// console.log(hamletQuoteWordList);
+// var bringBackTheOriginal = hamletQuoteWordList.replaceAll(',', ' ');
+// var theOriginalArray = bringBackTheOriginal.split(" ");
+// theOriginalArray.reverse();
+// var theOriginalQuote = theOriginalArray.join(' ');
+// console.log(theOriginalQuote);

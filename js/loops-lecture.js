@@ -8,12 +8,13 @@
 // }
 // console.log("Awwww .... no more pizza :(");
 
-// var counter = 0;
+// var counter = 1;
 // while(counter <= 100) {
 //     console.log(counter);
 //     // counter = counter + 1;
 //     counter++
 // }
+// console.log("And that's all folks");
 
 // counter = 100;
 // while(counter >= 88) {
@@ -30,11 +31,25 @@
 //     console.log(number);
 //     counter = counter + 1;
 // }
+// Practice:
+// counter = 0;
+// number = 1;
+// while(counter <= 12) {
+//     number = number*2;
+//     console.log(number)
+//     counter = counter+1
+// }
 
 // var number = 5;
 // while(number < 200) {
 //     console.log(number);
 //     number = number * 2;
+// }
+// Practice:
+// var number = 8;
+// while(number <= 800) {
+//     console.log(number);
+//     number = number * 3;
 // }
 
 // Do-while
@@ -80,21 +95,21 @@
 //    i++
 //    console.log(i);
 // }
-//
+
 // for (i =0; i < 100; i++) {
 //    console.log(i);
 // }
 // console.log("After the loop ends, i is " + i);
 
 // Break and Continue:
-var string = "";
-for (var i = 0; i < 8; i++) {
-    var word = prompt("Let's make a sentence");
-    if (word === "curses") {
-        console.log("This is a respectable program!");
-        break;
-        continue;
-    }
-    string = string + " " + word;
-    console.log(string)
-}
+// var string = "";
+// for (var i = 0; i < 8; i++) {
+//     var word = prompt("Let's make a sentence");
+//     if (word === "curses") {
+//         console.log("This is a respectable program!");
+//         break;
+//         continue;
+//     }
+//     string = string + " " + word;
+//     console.log(string)
+// }

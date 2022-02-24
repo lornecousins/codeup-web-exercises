@@ -160,13 +160,13 @@
 //   lastName: '...',
 // }
 // Regardless of the case of the first name and last name input, the output should be in all lower case.
-var fred = {
-  firstName: 'Fred',
-  lastName: 'Smith',
-  email: 'fred@email.com',
-  username: 'fred123',
-  password: 'pass123'
-}
+// var fred = {
+//   firstName: 'Fred',
+//   lastName: 'Smith',
+//   email: 'fred@email.com',
+//   username: 'fred123',
+//   password: 'pass123'
+// }
 // getSimpleUser(fred) // {firstName: 'fred', lastName: 'smith'}
 // function getSimpleUser(fred) {
 //     return "firstName: " + fred.firstName.toLowerCase() + "," + "\n" + "lastName: " + fred.lastName.toLowerCase() + ","
@@ -201,16 +201,45 @@ var fred = {
 //         containsAllStrings: true,
 //     combineResult: ‘bob123null’
 // }
-// function analyzeArray([in1, in2, in3]) {
-//     var lengthOfArray = array.length;
-//     var containsAllStrings = (in1, in2, in3) === "string";
-//     var combineResult = (in1, in2, in3) === in1 + in2 + in3;
-//     return "lengthOfArray: " + lengthOfArray + "," + "\n" + "containsAllStrings: " + containsAllStrings + "," + "\n" + "combineResult: " + combineResult
-// }
+//     var analyze {
+//         lengthOfArray: 'arr.length';
+//         containsAllStrings:'typeof arr === "string"';
+//         combineResult: 'arr++'
+//     }
+//     function analyzeArray(arr) {
+//         return <analyze className="lengthOfArray"></analyze>
+//     }
+// console.log(analyzeArray(analyze);
 //
 // console.log(analyzeArray([1, 2, 3]));
 // console.log(analyzeArray([‘a’,‘b’,‘c’]));
 // console.log(analyzeArray([‘bob’, 100, null]));
+// walkthru:
+// var testArray1 = [1, 2, 3];
+// var testArray2 = ['a', 'b', 'c'];
+// var testArray3 = ['bob', 100, null];
+//
+// function analyzeArray(arr) {
+//     var combine;
+//     arr.forEach(function(element, index) {
+//         if (index === 0) {
+//             combine = element;
+//         }
+//         combine += element;
+//     });
+//     return {
+//         lengthOfArray: arr.length,
+//         containsAllStrings: arr.every(function(element) {
+//             return typeof element === 'string';
+//         }),
+//         combineResult: combine
+//     }
+// }
+//
+// console.log(analyzeArray(testArray1));
+// console.log(analyzeArray(testArray2));
+// console.log(analyzeArray(testArray3));
+
 
 //2/22 Warmup:
 // Create a function, createNames, that takes in an array of first names and an array of last names. The function should return an array of name objects with firstName and lastName properties with the input array values. Assume both input arrays are not empty, the same length and only contain string elements.
@@ -237,17 +266,58 @@ var fred = {
     // ]
 
 // HINT: a solution may involve using a for loop to iterate over the length of one array to push each name object onto an array of name objects that will be returned from the function.
-function createNames(arr1, arr2) {
-    var output = [];
-    for (var i = 0; i < arr1.length; i += 1) {
-        output.push({
-            firstname: arr1[i],
-            lastName: arr2[i]
-        });
-    }
-    return output;
-}
-var firstNames = ['CJ', 'Max', 'Claude', 'Meowmeow'];
-var lastNames = ['Cat', 'Feline', 'Kitten', 'Calico'];
-console.log(createNames(firstNames, lastNames));
+// function createNames(arr1, arr2) {
+//     var output = [];
+//     for (var i = 0; i < arr1.length; i += 1) {
+//         output.push({
+//             firstname: arr1[i],
+//             lastName: arr2[i]
+//         });
+//     }
+//     return output;
+// }
+// var firstNames = ['CJ', 'Max', 'Claude', 'Meowmeow'];
+// var lastNames = ['Cat', 'Feline', 'Kitten', 'Calico'];
+// console.log(createNames(firstNames, lastNames));
 
+// 2/24 Warmup:
+// Write a function that accepts two integers and returns the remainder of dividing the larger value by the smaller value.
+//Division by zero should return NaN.
+// Examples:
+// n = 17
+// m = 5
+// result = 2 (remainder of 17/5)
+// function remainder(num1, num2) {
+//     if (num1 > num2) {
+//         return (num1 % num2);
+//     } if (num1 < num2) {
+//         return (num2 % num1);
+//     } if (isNaN(parseFloat(num1)) || (isNaN(parseFloat(num2)))) {
+//         return false;
+// }
+//
+// }
+// console.log(remainder(12, 5))
+// console.log(remainder(17, 6));
+// console.log(remainder(4, 7));
+// console.log(remainder("yo", 6));
+// console.log(remainder(9, 0));
+
+// In a factory a printer prints labels for boxes. For one kind of boxes the printer has to use colors which, for the sake of simplicity, are named with letters from a to m.
+//     The colors used by the printer are recorded in a control string. For example a "good" control string would be aaabbbbhaijjjm meaning that the printer used three times color a, four times color b, one time color h then one time color a...
+// Sometimes there are problems: lack of colors, technical malfunction and a "bad" control string is produced e.g. aaaxbbbbyyhwawiwjjjwwm with letters not from a to m.
+//     You have to write a function printer_error which given a string will return the error rate of the printer as a string representing a rational whose numerator is the number of errors and the denominator the length of the control string. Don't reduce this fraction to a simpler expression.
+// The string has a length greater or equal to one and contains only letters from ato z.
+//     Examples:
+// s="aaabbbbhaijjjm"
+// printer_error(s) => "0/14"
+// s="aaaxbbbbyyhwawiwjjjwwm"
+// printer_error(s) => "8/22"
+// */
+// function printer_error(string){
+//     var totalOverM = 0;
+//     for (var i in string){
+//         if (string[i] > "m"){totalOverM++}
+//     }
+//     return "" + totalOverM + "/" + string.length;
+// }
