@@ -321,3 +321,28 @@
 //     }
 //     return "" + totalOverM + "/" + string.length;
 // }
+//
+function isLochnessMonster(s) {
+    if (s == ("tree fiddy") || s == ("three fifty") || s == parseFloat("3.50")) {
+        return true;
+    } else {
+        return false;
+    }
+}
+// Walkthru:
+function isLochnessMonster(s) {
+    return s.includes("tree fiddy"))
+    || s.includes("3.50")
+    || s.includes("three fifty")
+}
+console.log(isLochnessMonster(3,50));
+console.log(isLochnessMonster("3.50"));
+console.log(isLochnessMonster("three fifty"));
+console.log(isLochnessMonster("tree, fiddy"));
+console.log(isLochnessMonster("tree fiddy"));
+
+
+
+// function unluckyDays(year) {
+//
+// }
