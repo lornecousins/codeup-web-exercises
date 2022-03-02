@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/exercise.css">
+    <title>Exercise</title>
+</head>
+<body>
+
+    <div id="square">
+    </div>
+    <script>
+        //one way
+        // var listener = function() {
+        //     alert("I'm a red square!");
+        // }
+        // document.getElementById("square").addEventListener("click", listener);
+
+        //another way
+        var listener = document.querySelector("#square");
+        function squa() {
+            alert("I'm a red square");
+        }
+        listener.addEventListener("click", squa).innerHTML = "I'm a big red square"
+    </script>
+</body>
+</html>
