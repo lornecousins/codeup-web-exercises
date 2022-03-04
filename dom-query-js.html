@@ -16,7 +16,7 @@
     <li data-dbid="5">Item 5</li>
 </ul><button>Click</button>
 <h2 id="sub-header"><button>Click</button>Hello Again.</h2>
-<p class="sub-paragraph"><button>Click</button>
+<p class="sub-paragraph">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
     ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -25,6 +25,7 @@
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
+<button>Click</button>
 
 <script>
     // (function() {
@@ -49,29 +50,28 @@
         subHeader.addEventListener("click", blue);
         // TODO: Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName("li");
-        function someGrey() {
+        function evenGrey() {
 
             // TODO: Set text color on every other list item to grey
-            for (var i = 0; i < listItems.length; i++) {
-                if (i % 2 !== 0) {
-                    listItems[i].style.color = "grey";
+            for (var i = 1; i < listItems.length; i+=2) {
+                    listItems[i].style.color = "red";
                 }
 
                 // TODO: Set text color of li with dbid = 1 to blue
                 if (listItems[i].dataset.dbid === "1") {
                     listItems[i].style.color = "blue";
                 }
-                listItems.addEventListener("click", someGrey)
             }
         }
+                listItems.addEventListener("click", evenGrey);
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName("sub-paragraph");
-        function misAcc() {
+        function cruise() {
 
             // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-            subParagraphs[0].innerHTML = "Mission Accomplished!"
+            document.getElementsByClassName("sub-paragraph").innerHTML = "Mission Accomplished!"
         }
-        subParagraphs.addEventListener("click", misAcc)
+        subParagraphs.addEventListener("click", cruise)
 
 
         // var firstButton = document.querySelector("button");

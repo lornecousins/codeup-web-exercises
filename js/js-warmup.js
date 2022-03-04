@@ -322,27 +322,68 @@
 //     return "" + totalOverM + "/" + string.length;
 // }
 //
-function isLochnessMonster(s) {
-    if (s == ("tree fiddy") || s == ("three fifty") || s == parseFloat("3.50")) {
-        return true;
-    } else {
-        return false;
-    }
-}
-// Walkthru:
-function isLochnessMonster(s) {
-    return s.includes("tree fiddy"))
-    || s.includes("3.50")
-    || s.includes("three fifty")
-}
-console.log(isLochnessMonster(3,50));
-console.log(isLochnessMonster("3.50"));
-console.log(isLochnessMonster("three fifty"));
-console.log(isLochnessMonster("tree, fiddy"));
-console.log(isLochnessMonster("tree fiddy"));
-
-
-
-// function unluckyDays(year) {
-//
+// function isLochnessMonster(s) {
+//     if (s == ("tree fiddy") || s == ("three fifty") || s == parseFloat("3.50")) {
+//         return true;
+//     } else {
+//         return false;
+//     }
 // }
+// // Walkthru:
+// function isLochnessMonster(s) {
+//     return s.includes("tree fiddy"))
+//     || s.includes("3.50")
+//     || s.includes("three fifty")
+// }
+// console.log(isLochnessMonster(3,50));
+// console.log(isLochnessMonster("3.50"));
+// console.log(isLochnessMonster("three fifty"));
+// console.log(isLochnessMonster("tree, fiddy"));
+// console.log(isLochnessMonster("tree fiddy"));
+//
+//
+//
+// // function unluckyDays(year) {
+// //
+// // }
+
+//create a function that that accepts an object with two properties, parcelNumber and weight, and returns the weight.
+
+parcelWeight ({
+    parcelNumber: 1,
+    weight: 20
+})
+//output: 20
+
+var parcel = {
+    parcelNumber: 1,
+    weight: 20
+}
+
+function parcelWeight (object) {
+    return object.weight
+}
+console.log(parcelWeight(parcel));
+
+//create a function that accepts an array of objects with two properties, parcelNumber and weight, nd returns the total weight of all parcels.
+
+function totalWeight(arrayOfObjects) {
+    var total = 0;
+    for (var i = 0;
+    i < arrayOfObjects.length; i++)
+    { total = total + arrayOfObjects[i].weight;
+} return total;
+}
+var parcels = [{number: 1, weight: 20}, {number: 2, weight: 25}];
+console.log(totalWeight(parcels));
+
+//DOM warmup:
+//create a heading that says "Good morning!"
+//create a button that says "Press if after 12pm"
+// When the button is pressed, "Good morning" changes to "Good afternoon!"
+var button = document.querySelector("button");
+
+function afterNoon() {
+    document.querySelector("h1").innerText = "Good afternoon!"
+}
+button.addEventListener("click", afterNoon );
