@@ -11,7 +11,30 @@
     <script src="https://code.jquery.com/jquery-2.2.4.js"
     integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
     crossorigin="anonymous"></script>
-
+    <p>Hello there, and welcome to this page. Check out the list.</p>
+    <div class="container">
+        <ul>
+            <li id="books">Books</li>
+                <ol id="booklist">
+                    <li>softback</li>
+                    <li>hardback</li>
+                    <li>picturebook</li>
+                </ol>
+            <li id="videos">Videos</li>
+                <ol>
+                    <li>color</li>
+                    <li>balck&white</li>
+                </ol>
+            <li id="shorts">Reels</li>
+            <li id="forSale">Merch</li>
+                <ul>
+                    <li>shirts</li>
+                    <li>hoodies</li>
+                    <li>coins</li>
+                    <li>stickers</li>
+                </ul>
+        </ul>
+    </div>
     <script>
         "use strict";
 
@@ -23,6 +46,8 @@
                 .css('color', 'lime');
             });
 
+        var contents = $('#forSale').html();
+            alert(contents)
 
 
 
