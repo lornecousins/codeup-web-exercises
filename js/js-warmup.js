@@ -389,75 +389,183 @@
 // button.addEventListener("click", afterNoon );
 
 // 3/7/22:
-var users = [
-    {
-        username: 'fsmith',
-        email: 'fsmith@email.com',
-        numberOfLogins: 23
-    },
-    {
-        username: 'ksmith',
-        email: 'ksmith@email.com',
-        numberOfLogins: 100
-    },
-    {
-        username: 'lsmith',
-        email: 'lsmith@email.com',
-        numberOfLogins: 10
-    }
-];
-
-// 1. Create a function, returnFirstUser, that takes in an array of user objects and returns the first user object.
-//
-// returnFirstUser(users) should return...
-function returnFirstUser(users) {
-    return users[0];
-}
-console.log(returnFirstUser(users));
-//
-// {
-//     username: 'fsmith',
+// var users = [
+//     {
+//         username: 'fsmith',
 //         email: 'fsmith@email.com',
-//     numberOfLogins: 23
-// }
-//
-// 2. Create a function, returnTotalUserLogins, that takes in an array of user objects and returns the total count of logins
-// for all users.
-//
-// returnTotalUserLogins(users) should return... 133
-function returnTotalUserLogins(users) {
-    var total = 0;
-    // for (var i = 0; i < users.length; i++) {
-    //     total = total + users[i].numberOfLogins;
-    // }
-    // or a forEach loop could be used:
-    users.forEach(function(user) {
-        total += user.numberOfLogins;
-    })
-    return total;
-    }
-
-console.log(returnTotalUserLogins(users));
-//
-// 3. (optional bonus) create a function, returnMostFrequentUser, that takes in an array of user objects and returns the
-// user object with the highest number of logins.
-//
-//
-// returnMostFrequentUser(users) should return...
-function returnMostFrequentUser(users) {
-    var freq = {};
-    users.forEach(function(user) {
-
-        if (user.numberOfLogins > freq.numberOfLogins) {
-            freq = user;
-        }
-    });
-    return freq;
-}
-console.log(returnMostFrequentUser(users));
-// {
-//     username: 'ksmith',
+//         numberOfLogins: 23
+//     },
+//     {
+//         username: 'ksmith',
 //         email: 'ksmith@email.com',
-//     numberOfLogins: 100
+//         numberOfLogins: 100
+//     },
+//     {
+//         username: 'lsmith',
+//         email: 'lsmith@email.com',
+//         numberOfLogins: 10
+//     }
+// ];
+//
+// // 1. Create a function, returnFirstUser, that takes in an array of user objects and returns the first user object.
+// //
+// // returnFirstUser(users) should return...
+// function returnFirstUser(users) {
+//     return users[0];
 // }
+// console.log(returnFirstUser(users));
+// //
+// // {
+// //     username: 'fsmith',
+// //         email: 'fsmith@email.com',
+// //     numberOfLogins: 23
+// // }
+// //
+// // 2. Create a function, returnTotalUserLogins, that takes in an array of user objects and returns the total count of logins
+// // for all users.
+// //
+// // returnTotalUserLogins(users) should return... 133
+// function returnTotalUserLogins(users) {
+//     var total = 0;
+//     // for (var i = 0; i < users.length; i++) {
+//     //     total = total + users[i].numberOfLogins;
+//     // }
+//     // or a forEach loop could be used:
+//     users.forEach(function(user) {
+//         total += user.numberOfLogins;
+//     })
+//     return total;
+//     }
+//
+// console.log(returnTotalUserLogins(users));
+// //
+// // 3. (optional bonus) create a function, returnMostFrequentUser, that takes in an array of user objects and returns the
+// // user object with the highest number of logins.
+// //
+// //
+// // returnMostFrequentUser(users) should return...
+// function returnMostFrequentUser(users) {
+//     var freq = {};
+//     users.forEach(function(user) {
+//
+//         if (user.numberOfLogins > freq.numberOfLogins) {
+//             freq = user;
+//         }
+//     });
+//     return freq;
+// }
+// console.log(returnMostFrequentUser(users));
+// // {
+// //     username: 'ksmith',
+// //         email: 'ksmith@email.com',
+// //     numberOfLogins: 100
+// // }
 
+// 3/8/22 Warmup:
+// Create a function, computeOperations, that takes in an array of operation objects and a starting integer value and returns an integer after all the calculations have completed, using the second integer argument as the first operand. Each operation object will have the following shape:
+//
+// {
+//     operation: 'subtract' (or 'multiply' or 'add'),
+//     integer: 7 (or any positive or negative integer)
+// }
+//
+// Example 1...
+
+var operations1 = [
+
+    {
+        operation: 'add',
+        integer: 7
+    },
+    {
+        operation: 'add',
+        integer: 3
+    }
+]
+
+
+// computeOperations(operations1, 10) // returns 20;
+// Example 2...
+
+var operations2 = [
+
+    {
+        operation: 'add',
+        integer: 7
+    },
+    {
+        operation: 'add',
+        integer: 3
+    },
+    {
+        operation: 'multiply',
+        integer: 3
+    },
+]
+
+// computeOperations(operations2, 10) // returns 60
+
+
+// Example 3...
+
+var operations3 = [
+
+    {
+        operation: 'subtract',
+        integer: 5
+    },
+    {
+        operation: 'multiply',
+        integer: -2
+    },
+    {
+        operation: 'add',
+        integer: 10
+    },
+]
+
+// computeOperations(operations3, 10) // returns 0
+// function computerOperations(operators, startingNum) {
+// //create a total variable that will change with each iteration of loop
+//     var total = startingNum;
+// // loop through each operation and console log each number
+//     operators.forEach(function (operator) {
+//         if (operator.operation === 'add') {
+//             // console.log('add the integer');
+//             total += operator.integer;
+//         } else if (operator.operation === 'subtract') {
+//             // console.log('subtract the integer');
+//             total -= operator.integer;
+//         } else if (operator.operation === 'multiply') {
+//             // console.log('multiply the integer');
+//             total *= operator.integer;
+//         }
+//
+//         // console.log(operator.integer);
+//         // console.log(operator.operation)
+//     });
+// //based on operation value, we can add/subtract/multiply the current integer to the total
+// // return total variable
+//     return total;
+// }
+//
+// console.log(computerOperations(operations1, 10), 20);
+// console.log(computerOperations(operations2, 10), 60);
+// console.log(computerOperations(operations3, 10), 0);
+
+//forLoop:
+function computerOperations(operators, startingNum) {
+    var total = startingNum;
+    for (var i = 0; i < operators.length; i++) {
+        if (operators[i].operation === 'add') {
+            total += operators[i].integer;
+        } else if (operators[i].operation === 'subtract') {
+            total -= operators[i].integer;
+        } else if (operators[i].operation === 'multiply') {
+            total *= operators[i].integer;
+        }
+    }       return total;
+}
+console.log(computerOperations(operations1, 10), 20);
+console.log(computerOperations(operations2, 10), 60);
+console.log(computerOperations(operations3, 10), 0);
