@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+
+<script src="/js/jquery-2.2.4.js"></script>
+<script>
+    "use strict";
+
+    $(document).keyup(function(e) {
+        console.log(e.keyCode);
+        //values of keys for cheat code
+        var allowedKeys = {
+            37: 'left',
+            38: 'up',
+            39: 'right',
+            40: 'down',
+            65: 'a',
+            66: 'b',
+            13: 'return'
+        };
+        //official code sequence
+        var konamiCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a', 'return'];
+        //a variable to remember the position user is at within sequence
+        var codePosition = 0;
+        //keydown eventListener
+        document.addEventListener('keydown', function (e) {
+            var kode = allowedKeys[e.keyCode];
+            var unlockCode = konamiCode[codePosition];
+            if (kode === unlockCode) {
+                codePosition++;
+                if (codePosition === konamiCode.length) {
+                    cheatUnlocked();
+                    codePosition = 0;
+                }
+            } else {
+                codePosition = 0;
+            }
+        });
+
+        function cheatUnlocked() {
+            document.body.style.backgroundImage = "url('images/Contra.webp')";
+            alert("cheats activated");
+        }
+    })
+   </script>
+</body>
+</html>

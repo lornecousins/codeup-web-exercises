@@ -554,18 +554,19 @@ var operations3 = [
 // console.log(computerOperations(operations3, 10), 0);
 
 //forLoop:
-function computerOperations(operators, startingNum) {
-    var total = startingNum;
-    for (var i = 0; i < operators.length; i++) {
-        if (operators[i].operation === 'add') {
-            total += operators[i].integer;
-        } else if (operators[i].operation === 'subtract') {
-            total -= operators[i].integer;
-        } else if (operators[i].operation === 'multiply') {
-            total *= operators[i].integer;
-        }
-    }       return total;
-}
-console.log(computerOperations(operations1, 10), 20);
-console.log(computerOperations(operations2, 10), 60);
-console.log(computerOperations(operations3, 10), 0);
+// function computerOperations(operators, startingNum) {
+//     var total = startingNum;
+//     for (var i = 0; i < operators.length; i++) {
+//         if (operators[i].operation === 'add') {
+//             total += operators[i].integer;
+//         } else if (operators[i].operation === 'subtract') {
+//             total -= operators[i].integer;
+//         } else if (operators[i].operation === 'multiply') {
+//             total *= operators[i].integer;
+//         }
+//     }       return total;
+// }
+// console.log(computerOperations(operations1, 10), 20);
+// console.log(computerOperations(operations2, 10), 60);
+// console.log(computerOperations(operations3, 10), 0);
+
