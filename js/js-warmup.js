@@ -570,3 +570,24 @@ var operations3 = [
 // console.log(computerOperations(operations2, 10), 60);
 // console.log(computerOperations(operations3, 10), 0);
 
+//3/10/22 warmup:
+//Create a function, addTwos, that takes in a array of integers and returns the sum of all 2s in the array. If no 2s are in the array, return 0.
+
+// Examples:
+
+    var nums1 = [1, 2, 3, 4, 5];
+var nums2 = [2, 2, 3, 4, 5];
+var nums3 = [10, 0, -5, 4, 5];
+var nums4 = [2, 2, -5, 2, 2];
+var nums5 = [2, 2, 2, 2, 2];
+function addTwos (arr) {
+    var sum = 0;
+    arr.forEach(function(num) {
+        sum += (num === 2) ? num : 0;
+    });
+}
+console.log(addTwos(nums1), 2)
+console.log(addTwos(nums2), 4)
+console.log(addTwos(nums3), 0)
+console.log(addTwos(nums4), 8)
+console.log(addTwos(nums5), 10)
