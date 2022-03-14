@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Map</title>
+</head>
+<body>
+
+<h1>Weather App</h1>
+
+<script src="js/keys.js"></script>
+<script src="js/jquery-2.2.4.js"></script>
+
+<script>
+    "use strict";
+
+    $.get('https://api.openweathermap.org/data/2.5/onecall', {
+        lat: 29.4252,
+        lon: -98.4916,
+        appid: WEATHER_TOKEN,
+        exclude: 'minutely,hourly,current,alerts',
+        units: 'imperial'
+    }).done(function(data) {
+        console.log(data);
+    });
+</script>
+
+</body>
+</html>
