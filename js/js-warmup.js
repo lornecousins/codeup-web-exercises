@@ -471,58 +471,58 @@
 //
 // Example 1...
 
-var operations1 = [
-
-    {
-        operation: 'add',
-        integer: 7
-    },
-    {
-        operation: 'add',
-        integer: 3
-    }
-]
+// var operations1 = [
+//
+//     {
+//         operation: 'add',
+//         integer: 7
+//     },
+//     {
+//         operation: 'add',
+//         integer: 3
+//     }
+// ]
 
 
 // computeOperations(operations1, 10) // returns 20;
 // Example 2...
 
-var operations2 = [
-
-    {
-        operation: 'add',
-        integer: 7
-    },
-    {
-        operation: 'add',
-        integer: 3
-    },
-    {
-        operation: 'multiply',
-        integer: 3
-    },
-]
+// var operations2 = [
+//
+//     {
+//         operation: 'add',
+//         integer: 7
+//     },
+//     {
+//         operation: 'add',
+//         integer: 3
+//     },
+//     {
+//         operation: 'multiply',
+//         integer: 3
+//     },
+// ]
 
 // computeOperations(operations2, 10) // returns 60
 
 
 // Example 3...
 
-var operations3 = [
-
-    {
-        operation: 'subtract',
-        integer: 5
-    },
-    {
-        operation: 'multiply',
-        integer: -2
-    },
-    {
-        operation: 'add',
-        integer: 10
-    },
-]
+// var operations3 = [
+//
+//     {
+//         operation: 'subtract',
+//         integer: 5
+//     },
+//     {
+//         operation: 'multiply',
+//         integer: -2
+//     },
+//     {
+//         operation: 'add',
+//         integer: 10
+//     },
+// ]
 
 // computeOperations(operations3, 10) // returns 0
 // function computerOperations(operators, startingNum) {
@@ -595,22 +595,66 @@ var operations3 = [
 
 // 3/14/22 Warmup:
 // Write a function, countNegatives, and takes in a array of integers and returns the total number of negative numbers. 0 should be considered a non-negative number. If no negative numbers are present, return 0.
-var nums1 = [-5, 10, 2, 5]; // countNegatives(nums1) returns 1
-var nums2 = [1, -10, -2, 5]; // countNegatives(nums2) returns 2
-var nums3 = [3, 10, 2, 5]; // countNegatives(nums3) returns 0
-var nums4 = [-3, -10]; // countNegatives(nums4) returns 2
+// var nums1 = [-5, 10, 2, 5]; // countNegatives(nums1) returns 1
+// var nums2 = [1, -10, -2, 5]; // countNegatives(nums2) returns 2
+// var nums3 = [3, 10, 2, 5]; // countNegatives(nums3) returns 0
+// var nums4 = [-3, -10]; // countNegatives(nums4) returns 2
+//
+// function countNegatives([]) {
+//    var negativesCount = 0;
+//    nums.forEach(function(num) {
+//        if (num < 0) {
+//            negativesCount++;
+//        }
+//    });
+//    return negativesCount;
+// }
+//
+// console.log(nums1);
+// console.log(nums2);
+// console.log(nums3);
+// console.log(nums4);
 
-function countNegatives([]) {
-   var negativesCount = 0;
-   nums.forEach(function(num) {
-       if (num < 0) {
-           negativesCount++;
-       }
-   });
-   return negativesCount;
-}
+// 3/15/22 warmup:
+// Create a function, createFirstNamesArray, that takes in an array of user objects and returns an array of first name strings. Assume that each user object has a property called 'firstName'.
 
-console.log(nums1);
-console.log(nums2);
-console.log(nums3);
-console.log(nums4);
+    // Example...
+
+// var users = [
+//     {
+//         firstName: 'Bob',
+//         lastName: 'Smith',
+//         email: 'bob@email.com'
+//     },
+//     {
+//         firstName: 'Sally',
+//         lastName: 'Smith',
+//         email: 'sally@email.com'
+//     },
+//     {
+//         firstName: 'Fred',
+//         lastName: 'Smith',
+//         email: 'fred@email.com'
+//     },
+//     {
+//         firstName: 'Cathy',
+//         lastName: 'Smith',
+//         email: 'cathy@email.com'
+//     },
+//     {
+//         firstName: 'Joe',
+//         lastName: 'Smith',
+//         email: 'joe@email.com'
+//     },
+// ];
+//
+// function createFirstNamesArray(users) {
+//     var firstNames = [];
+//     users.forEach(function(user) {
+//         firstNames.push(user.firstName);
+//     });
+//     return firstNames
+// }
+//
+// console.log(createFirstNamesArray(users));
+// returns... ['Bob', 'Sally', 'Fred', 'Cathy', 'Joe']
