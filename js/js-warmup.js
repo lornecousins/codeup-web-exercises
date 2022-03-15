@@ -574,20 +574,43 @@ var operations3 = [
 //Create a function, addTwos, that takes in a array of integers and returns the sum of all 2s in the array. If no 2s are in the array, return 0.
 
 // Examples:
+//
+//     var nums1 = [1, 2, 3, 4, 5];
+// var nums2 = [2, 2, 3, 4, 5];
+// var nums3 = [10, 0, -5, 4, 5];
+// var nums4 = [2, 2, -5, 2, 2];
+// var nums5 = [2, 2, 2, 2, 2];
+// function addTwos (arr) {
+//     var sum = 0;
+//     arr.forEach(function(num) {
+//         sum += (num === 2) ? num : 0;
+//     });
+// }
+// console.log(addTwos(nums1), 2)
+// console.log(addTwos(nums2), 4)
+// console.log(addTwos(nums3), 0)
+// console.log(addTwos(nums4), 8)
+// console.log(addTwos(nums5), 10)
 
-    var nums1 = [1, 2, 3, 4, 5];
-var nums2 = [2, 2, 3, 4, 5];
-var nums3 = [10, 0, -5, 4, 5];
-var nums4 = [2, 2, -5, 2, 2];
-var nums5 = [2, 2, 2, 2, 2];
-function addTwos (arr) {
-    var sum = 0;
-    arr.forEach(function(num) {
-        sum += (num === 2) ? num : 0;
-    });
+
+// 3/14/22 Warmup:
+// Write a function, countNegatives, and takes in a array of integers and returns the total number of negative numbers. 0 should be considered a non-negative number. If no negative numbers are present, return 0.
+var nums1 = [-5, 10, 2, 5]; // countNegatives(nums1) returns 1
+var nums2 = [1, -10, -2, 5]; // countNegatives(nums2) returns 2
+var nums3 = [3, 10, 2, 5]; // countNegatives(nums3) returns 0
+var nums4 = [-3, -10]; // countNegatives(nums4) returns 2
+
+function countNegatives([]) {
+   var negativesCount = 0;
+   nums.forEach(function(num) {
+       if (num < 0) {
+           negativesCount++;
+       }
+   });
+   return negativesCount;
 }
-console.log(addTwos(nums1), 2)
-console.log(addTwos(nums2), 4)
-console.log(addTwos(nums3), 0)
-console.log(addTwos(nums4), 8)
-console.log(addTwos(nums5), 10)
+
+console.log(nums1);
+console.log(nums2);
+console.log(nums3);
+console.log(nums4);

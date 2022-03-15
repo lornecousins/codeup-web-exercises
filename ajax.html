@@ -1,183 +1,183 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AJAX Lecture</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-</head>
-<body>
-<main class="container mt-5">
-    <h1 class="my-5">Intro to AJAX</h1>
-    <form method="GET" action="https://hookb.in/LgYJLdVydrS18VqqgzZY">
-        <div>
-            <label for="username" class="form-label">Username</label>
-            <input id="username" placeholder="Enter username" class="form-control" type="text" name="username">
-        </div>
-        <button class="btn btn-success my-2">Submit</button>
-    </form>
-    <a href="https://hookb.in/LgYJLdVydrS18VqqgzZY">Some Link</a>
-</main>
-<script
-        src="https://code.jquery.com/jquery-2.2.4.min.js"
-        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-        crossorigin="anonymous"></script>
-<script>
-    // $(document).ready(function() {
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--    <title>AJAX Lecture</title>-->
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">-->
+<!--</head>-->
+<!--<body>-->
+<!--<main class="container mt-5">-->
+<!--    <h1 class="my-5">Intro to AJAX</h1>-->
+<!--    <form method="GET" action="https://hookb.in/LgYJLdVydrS18VqqgzZY">-->
+<!--        <div>-->
+<!--            <label for="username" class="form-label">Username</label>-->
+<!--            <input id="username" placeholder="Enter username" class="form-control" type="text" name="username">-->
+<!--        </div>-->
+<!--        <button class="btn btn-success my-2">Submit</button>-->
+<!--    </form>-->
+<!--    <a href="https://hookb.in/LgYJLdVydrS18VqqgzZY">Some Link</a>-->
+<!--</main>-->
+<!--<script-->
+<!--        src="https://code.jquery.com/jquery-2.2.4.min.js"-->
+<!--        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="-->
+<!--        crossorigin="anonymous"></script>-->
+<!--<script>-->
+<!--    // $(document).ready(function() {-->
 
-        "use strict";
+<!--        "use strict";-->
 
-        // simple request
-        // ($.ajax('../data/orders.json').done(function(responseData) {
-        //     console.log(responseData);
-        // }));
-        // $.ajax('./data/orders.json'); // jQuery request object
+<!--        // simple request-->
+<!--        // ($.ajax('../data/orders.json').done(function(responseData) {-->
+<!--        //     console.log(responseData);-->
+<!--        // }));-->
+<!--        // $.ajax('./data/orders.json'); // jQuery request object-->
 
-        // $.ajax("./data/orders.json").done(function(responseData){
-        //     console.log(responseData);
-        // });
+<!--        // $.ajax("./data/orders.json").done(function(responseData){-->
+<!--        //     console.log(responseData);-->
+<!--        // });-->
 
-        // DOESN'T WORK
-        // var responseData;
-        // $.ajax('./data/orders.json').done(function(data) {
-        //     responseData = data;
-        // }); // .done()
-        //
-        // console.log(responseData);
-        //in above, if console.log was placed inside of braces, the return would show the data
-        //practice:
-        // $.ajax('https://swapi.dev/api/people/9').done(function(data) {
-        //     console.log(data);
-        // })
-        // $.ajaz('https://developer.marvel.com/docs#!/public/getCharacterStoryCollection_get_5/description').done(function(data) {
-        //     console.log(data);
-        // })
-
-
-        // simple API request
+<!--        // DOESN'T WORK-->
+<!--        // var responseData;-->
+<!--        // $.ajax('./data/orders.json').done(function(data) {-->
+<!--        //     responseData = data;-->
+<!--        // }); // .done()-->
+<!--        //-->
+<!--        // console.log(responseData);-->
+<!--        //in above, if console.log was placed inside of braces, the return would show the data-->
+<!--        //practice:-->
+<!--        // $.ajax('https://swapi.dev/api/people/9').done(function(data) {-->
+<!--        //     console.log(data);-->
+<!--        // })-->
+<!--        // $.ajaz('https://developer.marvel.com/docs#!/public/getCharacterStoryCollection_get_5/description').done(function(data) {-->
+<!--        //     console.log(data);-->
+<!--        // })-->
 
 
-        // $.ajax("https://swapi.dev/api/films")
-        //     .done(function(data){
-        //         console.log(data);
-        // });
+<!--        // simple API request-->
 
 
-        // single argument with .done(), .fail() and .always() methods
-        //
-        // $.ajax({
-        //     url: "https://swapi.dev/api/films",
-        //     type: "GET",
-        //     data: {
-        //         search: "A New Hope"
-        //     }
-        // }).done(function(data, status, jqXhr) {
-        //     // console.log(status);
-        //     // console.log(data);
-        //     // console.log(jqXhr);
-        //     console.log("The director of Star Wars: A New Hope is..." + data.results[0].director);
-        // }).fail(function(jqXhr, status, error) {
-        //     console.log(jqXhr);
-        //     console.log(status);
-        //     console.log(error);
-        //     //     console.log("Request failed! " + status);
-        // // }).always(function() {
-        // //     console.log("Request made.");
-        // });
-    //a fun AP that tries to guess your age based on your name:
-    // $.ajax('https://api.agify.io/?name=Lorne').done(console.log);
-
-        // Url first argument and configuration object second argument
-
-        // $.ajax("https://swapi.dev/api/films", {
-        //     "type": "GET",
-        //     "data": {
-        //         "search": "A New Hope"
-        //     }
-        // }).done(function(data) {
-        //     console.log("The director of Star Wars: A New Hope is..." + data.results[0].director);
-        // });
+<!--        // $.ajax("https://swapi.dev/api/films")-->
+<!--        //     .done(function(data){-->
+<!--        //         console.log(data);-->
+<!--        // });-->
 
 
-        // Storing returned jQuery XML HTTP Response object
+<!--        // single argument with .done(), .fail() and .always() methods-->
+<!--        //-->
+<!--        // $.ajax({-->
+<!--        //     url: "https://swapi.dev/api/films",-->
+<!--        //     type: "GET",-->
+<!--        //     data: {-->
+<!--        //         search: "A New Hope"-->
+<!--        //     }-->
+<!--        // }).done(function(data, status, jqXhr) {-->
+<!--        //     // console.log(status);-->
+<!--        //     // console.log(data);-->
+<!--        //     // console.log(jqXhr);-->
+<!--        //     console.log("The director of Star Wars: A New Hope is..." + data.results[0].director);-->
+<!--        // }).fail(function(jqXhr, status, error) {-->
+<!--        //     console.log(jqXhr);-->
+<!--        //     console.log(status);-->
+<!--        //     console.log(error);-->
+<!--        //     //     console.log("Request failed! " + status);-->
+<!--        // // }).always(function() {-->
+<!--        // //     console.log("Request made.");-->
+<!--        // });-->
+<!--    //a fun AP that tries to guess your age based on your name:-->
+<!--    // $.ajax('https://api.agify.io/?name=Lorne').done(console.log);-->
 
-        // var jqXhr = $.ajax("https://swapi.dev/api/films", {
-        //     "type": "GET",
-        //     "data": {
-        //         "search": "A New Hope"
-        //     }
-        // });
-        //
-        // console.log(jqXhr);
-        //
-        // jqXhr.done(function(data) {
-        //     console.log("The director of Star Wars: A New Hope is..." + data.results[0].director);
-        // });
+<!--        // Url first argument and configuration object second argument-->
+
+<!--        // $.ajax("https://swapi.dev/api/films", {-->
+<!--        //     "type": "GET",-->
+<!--        //     "data": {-->
+<!--        //         "search": "A New Hope"-->
+<!--        //     }-->
+<!--        // }).done(function(data) {-->
+<!--        //     console.log("The director of Star Wars: A New Hope is..." + data.results[0].director);-->
+<!--        // });-->
 
 
-        // GET short-hand method
+<!--        // Storing returned jQuery XML HTTP Response object-->
 
-        // $.get("https://swapi.dev/api/films", {
-        //     "data": {
-        //         "search": "A New Hope"
-        //     }
-        // }).done(function(data) {
-        //     console.log("The director of Star Wars: A New Hope is..." + data.results[0].director);
-        // });
+<!--        // var jqXhr = $.ajax("https://swapi.dev/api/films", {-->
+<!--        //     "type": "GET",-->
+<!--        //     "data": {-->
+<!--        //         "search": "A New Hope"-->
+<!--        //     }-->
+<!--        // });-->
+<!--        //-->
+<!--        // console.log(jqXhr);-->
+<!--        //-->
+<!--        // jqXhr.done(function(data) {-->
+<!--        //     console.log("The director of Star Wars: A New Hope is..." + data.results[0].director);-->
+<!--        // });-->
 
-    // });
 
-</script>
-</body>
-</html>
+<!--        // GET short-hand method-->
 
+<!--        // $.get("https://swapi.dev/api/films", {-->
+<!--        //     "data": {-->
+<!--        //         "search": "A New Hope"-->
+<!--        //     }-->
+<!--        // }).done(function(data) {-->
+<!--        //     console.log("The director of Star Wars: A New Hope is..." + data.results[0].director);-->
+<!--        // });-->
 
+<!--    // });-->
+
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
 
 
 
 
 
-What can allow a user to make a request in a web app?
 
 
-POST / GET - types of requests
-
-How is a user able to send GET and POST requests in a web page?
-    - submit a form (GET or POST requests)
-    - type urls in and submit to your browser (GET request)
-    - click links (GET requests)
-    - use JavaScript to send requests
+<!--What can allow a user to make a request in a web app?-->
 
 
-AJAX (asynchronous JavaScript and Xml)
+<!--POST / GET - types of requests-->
 
-================================= AJAX REQUESTS
+<!--How is a user able to send GET and POST requests in a web page?-->
+<!--    - submit a form (GET or POST requests)-->
+<!--    - type urls in and submit to your browser (GET request)-->
+<!--    - click links (GET requests)-->
+<!--    - use JavaScript to send requests-->
 
--- Reading Questions
 
-What is AJAX and what is it used for?
-Asynchronous JavaScript and Xml
-A set of existing web development techniques, used in a new way, so that webpages/applocations can change content dynamically, without having to reload the entire page.
+<!--AJAX (asynchronous JavaScript and Xml)-->
 
-What is JSON and what is it used for?
-JavaScript Object Notation
-A data-interchange format that is easy for humans to read and write.  Widely used in cloud based services and web application programming interfaces (APIs).
+<!--================================= AJAX REQUESTS-->
 
-Can methods be included in a JSON file?
-No
+<!--&#45;&#45; Reading Questions-->
 
-What does 'jqXhr' represent in the curriculum AJAX examples?
-jQuery XHR request (object) that reepresents the request
+<!--What is AJAX and what is it used for?-->
+<!--Asynchronous JavaScript and Xml-->
+<!--A set of existing web development techniques, used in a new way, so that webpages/applocations can change content dynamically, without having to reload the entire page.-->
 
-What's the difference between $.ajax() and $.get()?
-$-ajax() more customizable
+<!--What is JSON and what is it used for?-->
+<!--JavaScript Object Notation-->
+<!--A data-interchange format that is easy for humans to read and write.  Widely used in cloud based services and web application programming interfaces (APIs).-->
 
-Is jQuery required to make AJAX requests?
-No!
-    jQuery makes it simpler, but it is not required.
+<!--Can methods be included in a JSON file?-->
+<!--No-->
 
-(optional) What possible real world example can you think of where AJAX might be used?
+<!--What does 'jqXhr' represent in the curriculum AJAX examples?-->
+<!--jQuery XHR request (object) that reepresents the request-->
+
+<!--What's the difference between $.ajax() and $.get()?-->
+<!--$-ajax() more customizable-->
+
+<!--Is jQuery required to make AJAX requests?-->
+<!--No!-->
+<!--    jQuery makes it simpler, but it is not required.-->
+
+<!--(optional) What possible real world example can you think of where AJAX might be used?-->
 
 <!DOCTYPE html>
 <html>

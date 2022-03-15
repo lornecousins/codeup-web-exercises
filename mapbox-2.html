@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Map</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        #map {
+            width: 100%;
+            height: 700px;
+        }
+    </style>
+</head>
+<body>
+
+<div id='map'></div>
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+<script src="js/keys.js"></script>
+<script>
+    "use strict";
+    // In this file, create a Mapbox map that shows Washington D.C. and places a marker on the Lincoln Memorial.
+    //
+    //     Bonus: when the marker is dragged and released, display the coordinates in an h1
+
+    mapboxgl.accessToken = MAPBOX_API_TOKEN
+    var map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-77.0369, 38.9072,], // starting position [lng, lat]
+        zoom:11 // starting zoom
+    });
+
+    var popup = new mapboxgl.Popup()
+        .setHTML('Lincoln Memorial');
+
+    var marker = new mapboxgl.Marker({draggable: true})
+            .setLngLat([-77.0502, 38.8893])
+            .addTo(map)
+            .setPopup(popup);
+
+    marker.on('dragend', function() {
+        alert(marker.getLngLat());
+    })
+
+</script>
+</body>
+</html>

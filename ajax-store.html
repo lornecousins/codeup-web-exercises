@@ -3,6 +3,15 @@
 <head>
     <title>Online Store</title>
 </head>
+    <style>
+        table {
+            background-color: lightgray;
+            border: 2px solid black;
+            margin-bottom: 5px;
+            padding: 10px;
+
+        }
+    </style>
 <body>
 
 <h1>My Tool Store</h1>
@@ -15,21 +24,51 @@
             <th>Price</th>
             <th>Categories</th>
         </tr>
-    </thead>
-    <tbody id="insertProducts"></tbody>
-</table>
 
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    </thead>
+    <tbody id="insertProducts">
+
+    </tbody>
+</table>
+<button id="reload">Load Inventory</button>
+
+<script src="js/jquery-2.2.4.js"></script>
 
 <script>
-(function() {
+    $(document).ready(function() {
     "use strict";
     // TODO: Create an AJAX GET request for the file under data/inventory.json
+        //make request to the json file, inventory.json
+        var inventory;
+        function updateTime() {
+        ($.get('data/inventory.json').done(function(data) {
+           inventory = data;
+           console.log(inventory)
+            addToList();
+        }))
+        }
+        updateTime();
 
-    // TODO: Take the data from inventory.json and append it to the products table
+        // TODO: Take the data from inventory.json and append it to the products table
     //       HINT: Your data should come back as a JSON object; use console.log() to inspect
     //             its contents and fields
     //       HINT: You will want to target #insertProducts for your new HTML elements
+        //add button to reload the tools inventory
+       function addToList() {
+           var list;
+           for (var i = 0; i < inventory.length; i++) {
+                list +=
+                   "  <tr>\n" +
+                   "    <td>" + inventory[i].title + "</td>\n" +
+                   "    <td>" + inventory[i].quantity + "</td>\n" +
+                   "    <td>" + inventory[i].price + "</td>\n" +
+                   "    <td>" + inventory[i].categories.join(", ") + "</td>\n" +
+                   "  </tr>"
+               $("#insertProducts").html(list);
+           }
+       }
+       $("#reload").click(updateTime);
+
 })();
 </script>
 

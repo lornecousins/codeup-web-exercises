@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Map</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
+<style>
+    #map {
+        width: 100%;
+        height: 700px;
+    }
+</style>
+</head>
+<body>
+
+<div id='map'></div>
+
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+<script src="js/keys.js"></script>
+<script>
+    "use strict";
+
+    mapboxgl.accessToken = MAPBOX_API_TOKEN
+
+    // var map = new mapboxgl.Map({
+    //     container: 'map', // container ID
+    //     style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    //     center: [-98.4916, 29.4252], // starting position [lng, lat]
+    //     zoom: 9 // starting zoom
+    // });
+    // ================================= Mapbox Mini Exercises
+    //
+    // Mini - Exercise 1 (before markers)
+    //
+    // In this file, create a Mapbox map that shows your home town. After 5 seconds, have the map automatically change to a map of the entire United States using a satellite style.
+//use setTimeout
+//     setTimeout(function() {
+//         map.setCenter([-98.4916, 29.4252]);
+//         map.setZoom(3);
+//         map.setStyle('mapbox://styles/mapbox/satellite-v9');
+//     }, 5000);
+
+    // ===============markers and popups
+    // var markers = [];
+    // function addMarker(longitude, latitiude) {
+    //     var marker = new mapboxgl.Marker()
+    //         .setLngLat(longitude, latitude)
+    //         .addTo(map);
+    //     markers.push(marker);
+    // }
+    // //Adding event listeners to the map
+    // map.on('click', function() {
+    //     alert('clicked on the map!')
+    // })
+    //================= popups
+    //create a marker
+
+    // var map = new mapboxgl.Map({
+    //     container: 'map', // container ID
+    //     style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    //     center: [-97.5431, 35.5230], // starting position [lng, lat]
+    //     zoom: 17 // starting zoom
+    // });
+    //create marker
+    //
+    // var marker = new mapboxgl.Marker()
+    // .setLngLat([-97.5431, 35.5230])
+    // .addTo(map);
+    //
+    // //create popup
+    //
+    // var popup = new mapboxgl.Popup()
+    // .setHTML('<h1>Whiskey Cake</h1><a href="https://whiskeycake.com/">Website</a>');
+    //
+    // marker.setPopup(popup);
+
+    // ===============  GEOCODING AND REVERSE GEOCODING
+
+    // var map = new mapboxgl.Map({
+    //     container: 'map', // container ID
+    //     style: 'mapbox://styles/mapbox/streets-v9', // style URL
+    //     center: [-98.4916, 29.4252], // starting position [lng, lat]
+    //     zoom: 10 // starting zoom
+    // });
+
+    // geocode('The Alamo San Antonio', MAPBOX_API_TOKEN).then(function(data) {
+    //     console.log(data);
+    // })
+    // var long = -95.5555;
+    // var lat = 33.6618;
+    //
+    // reverseGeocode({lng: long, lat: lat}, MAPBOX_API_TOKEN).then(function(data) {
+    //     console.log(data);
+    // })
+
+
+    //
+    //     Add the latitude and longitude of Honolulu, Hawaii and use reverse geocoding to move the map to this location by geocoding inside of the reverseGeocode function.
+
+
+</script>
+
+</body>
+</html>
