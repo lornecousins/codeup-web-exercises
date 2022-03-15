@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <title>Weather Map</title>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <style>
 
         #map {
             width: 100%;
-            height: 600px;
+            height: 400px;
+            margin-bottom: 1em;
+            margin-top: 1em;
+            border: solid black 5px;
+            border-radius: 5px;
         }
         .coordinates {
             background: rgba(0, 0, 0, 0.5);
             color: #fff;
             position: absolute;
-            bottom: 40px;
+            bottom: 80px;
             left: 10px;
             padding: 5px 10px;
             margin: 0;
@@ -23,76 +28,119 @@
             border-radius: 3px;
             display: none;
         }
+        .card {
+            background-color: darkgray;
+        }
+        .card-header {
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
 
+<div class="d-flex bg-info text-white">
+    <header>
+        <h1>Weather App</h1>
+    </header>
+</div>
+<br>
 
-   <div id="container"></div>
-        <div class="container"></div>
-            <header>
-                <h1>Weather App</h1>
-                <h3 id="location">San Antonio</h3>
-            </header>
-   <div class="card-group" id="weather"></div>
-   <input id="userInput"  class="form-control" type="text" placeholder="Search by City, State, or ZIP code">
+<div class="card-group" id="weather"></div>
+<input id="userInput"  class="form-control" type="text" placeholder="Search by City, State, or ZIP"><br>
+<button id="submit" type="button" class="btn btn-info">Submit</button>
 
-   <button id="submit" type="button" class="btn btn-primary">Submit</button>
-
-   <div id='map'></div>
-
-   <pre id="coordinates" class="coordinates"></pre>
+<div class="d-flex w-100 justify-content-start overflow-scroll mt-3 mb-3">
+    <div id="dailyWeather" class="d-flex justify-content-center">
+    </div>
+</div>
 
 
+<div id='map'></div>
 
-    <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
-    <script src="js/keys.js"></script>
-    <script src="js/keys.js"></script>
-    <script src="js/jquery-2.2.4.js"></script>
+<pre id="coordinates" class="coordinates"></pre>
 
-    <script>
-        "use strict";
 
-        mapboxgl.accessToken = MAPBOX_API_TOKEN
-        var coordinates = document.getElementById('coordinates');
-        var map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v11',
-            center: [-98.4916, 29.4252,],
-            zoom: 9
-        });
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+<script src="js/keys.js"></script>
+<script src="js/jquery-2.2.4.js"></script>
 
-        var marker = new mapboxgl.Marker({
-            draggable: true
-        })
-            .setLngLat([-98.4916, 29.4252])
-            .addTo(map);
+<script>
+    "use strict";
 
-        function onDragEnd() {
-            var lngLat = marker.getLngLat();
-            coordinates.style.display = 'block';
-            coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
-        }
-        marker.on('dragend', onDragEnd);
+    var lat = 29.41;
+    var lng = -98.49;
 
+    mapboxgl.accessToken = MAPBOX_API_TOKEN;
+
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-98.4916, 29.4252,],
+        zoom: 9
+    });
+    weatherMap()
+    function weatherMap() {
 
         $.get('https://api.openweathermap.org/data/2.5/onecall', {
-            lat: 29.4252,
-            lon: -98.4916,
+            lat: lat,
+            lon: lng,
             appid: WEATHER_TOKEN,
             exclude: 'minutely,hourly,current,alerts',
-        }).done(function(data) {
-            console.log(data);
-        })
+            units: 'imperial'
+        }).done(function (data) {
+            function createHTML(data) {
+                var html = ''
+                for (var i = 0; i < 5; i++) {
+                    var dateData = data.daily[i].dt;
+                    var date = new Date(dateData * 1000).toDateString()
+                    var maxTemp = data.daily[i].temp.max;
+                    var minTemp = data.daily[i].temp.min;
+                    var humidity = data.daily[i].humidity;
+                    var windSpeed = data.daily[i].wind_speed;
+                    html +=
+                        '<div class="card" style="width: 18rem;">' +
+                        '<div class="card-header">' +
+                        date +
+                        '</div>' +
+                        '<ul class="list-group list-group-flush">' +
+                        ' <li class="list-group-item">' + 'High/Low: ' + maxTemp + '/' + minTemp + '</li>' +
+                        '<li class="list-group-item">' + 'Humidity: ' + humidity + '</li>' +
+                        '<li class="list-group-item">' + 'Wind Speed: ' + windSpeed + 'mph' + '</li>' +
+                        '</ul>' +
+                        '</div>'
+                }
+                return html;
+            }
 
-
-
-            .fail(function(jqXhr, status, error) {
-            console.log(jqXhr);
-            console.log(status);
-            console.log(error);
+            $('#dailyWeather').html(createHTML(data))
+            // $('#userInput').click(function() {
+            //     $(this).html(createHTML(data))
+            // })
         });
-    </script>
+    }
+
+    var coordinates = document.getElementById('coordinates');
+    var marker = new mapboxgl.Marker({
+        draggable: true
+    })
+        .setLngLat([lng, lat])
+        .addTo(map);
+
+    function onDragEnd() {
+        var lngLat = marker.getLngLat();
+        coordinates.style.display = 'block';
+        coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
+        lng = lngLat.lng;
+        lat = lngLat.lat;
+        reverseGeocode(lngLat, MAPBOX_API_TOKEN).then(function(data) {
+        })
+        weatherMap()
+
+        }
+    marker.on('dragend', onDragEnd);
+
+</script>
 
 </body>
 </html>
