@@ -3,11 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>JavaScript Warmup</title>
+    <style>
+        #square {
+            width: 200px;
+            height: 200px;
+            background-color: gray;
+        }
+    </style>
 </head>
-    <h1>Good Morning!</h1>
-        <button>Press if after 12pm</button>
+<!--    <h1>Good Morning!</h1>-->
+<!--        <button>Press if after 12pm</button>-->
 
 <body>
+<div id="square"></div>
+<button id="changeColor">Change Color</button><br>
+<button id="reset">Reset</button>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+//jquery to click button and change color of square
+//     $('#changeColor').click(function() {
+//         $('#square').css('background-color', 'rebeccapurple ');
+//     })
+//DOM to click button and change color of square
+    var changeColorButton = document.querySelector('#changeColor');
+    changeColorButton.addEventListener('click', function() {
+    document.getElementById("square").style.backgroundColor = "rebeccapurple";
+    })
+//jquery reset button to turn square back to gray
+$('#reset').click(function () {
+    // $('#square').css('background', 'gray')
+    //could use location.reload() to reload page
+    location.reload()
+})
+//DOM reset button to turn square back to gray
+//     var resetButton = document.querySelector('#reset');
+//     resetButton.addEventListener('click', function() {
+//         // document.getElementById('square').style.background = "gray";
+//     //could use location.reload() to reload page
+//         location.reload()
+//     })
+</script>
     <script src="js/js-warmup.js"></script>
 </body>
 </html>

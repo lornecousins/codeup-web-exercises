@@ -655,6 +655,8 @@
 //     });
 //     return firstNames
 // }
-//
 // console.log(createFirstNamesArray(users));
 // returns... ['Bob', 'Sally', 'Fred', 'Cathy', 'Joe']
+
+//3/17/22
+//DOM Warmup
