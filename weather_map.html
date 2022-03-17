@@ -56,7 +56,7 @@
 
 
 <div id='map'></div>
-
+<div id="geocoder" class="geocoder"></div>
 <pre id="coordinates" class="coordinates"></pre>
 
 
@@ -115,7 +115,7 @@
 
             $('#dailyWeather').html(createHTML(data))
             // $('#userInput').click(function() {
-            //     $(this).html(createHTML(data))
+            //     $(#userInput).html(createHTML(data))
             // })
         });
     }
@@ -140,6 +140,15 @@
         }
     marker.on('dragend', onDragEnd);
 
+    var geocoder = new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl
+    });
+
+    document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+    $('button').click(function() {
+        $('#userInput').click();
+    })
 </script>
 
 </body>
