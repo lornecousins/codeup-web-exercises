@@ -660,3 +660,29 @@
 
 //3/17/22
 //DOM Warmup
+//Done in HTML
+//jquery to click button and change color of square
+//     $('#changeColor').click(function() {
+//         $('#square').css('background-color', 'rebeccapurple ');
+//     })
+//DOM to click button and change color of square
+// var changeColorButton = document.querySelector('#changeColor');
+// changeColorButton.addEventListener('click', function() {
+//     document.getElementById("square").style.backgroundColor = "rebeccapurple";
+// })
+// //jquery reset button to turn square back to gray
+// $('#reset').click(function () {
+//     // $('#square').css('background', 'gray')
+//     //could use location.reload() to reload page
+//     location.reload()
+// })
+//DOM reset button to turn square back to gray
+//     var resetButton = document.querySelector('#reset');
+//     resetButton.addEventListener('click', function() {
+//         // document.getElementById('square').style.background = "gray";
+//     //could use location.reload() to reload page
+//         location.reload()
+//     })
+
+//3/18/22
+

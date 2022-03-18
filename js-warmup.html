@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <title>JavaScript Warmup</title>
     <style>
-        #square {
+        /*#square {*/
+        /*        width: 200px;*/
+        /*        height: 200px;*/
+        /*        background-color: gray;*/
+        /*}*/
+        .square {
             width: 200px;
             height: 200px;
-            background-color: gray;
+            border: 1px solid black;
         }
     </style>
 </head>
@@ -15,26 +20,67 @@
 <!--        <button>Press if after 12pm</button>-->
 
 <body>
-<div id="square"></div>
-<button id="changeColor">Change Color</button><br>
+<div class="square" id="square1" data-color="blue"></div>
+<div class="square" id="square2" data-color="red"></div>
+<div class="square" id="square3" data-color="green"></div>
+<!--<div id="square"></div>-->
+<!--<button id="changeColor">Change Color</button><br>-->
 <button id="reset">Reset</button>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script>
+//3 squares added.  create code to hover over each square and change color, and return to white after unhover.
+//My solution:
+//     $('#square1').hover(function() {
+//         $(this).css("background", "blue")
+//     }, function() {
+//         $(this).css("background", "white")
+//     });
+//     $('#square2').hover(function() {
+//         $(this).css("background", "red")
+//     }, function() {
+//         $(this).css("background", "white")
+//     });
+//     $('#square3').hover(function() {
+//         $(this).css("background", "green")
+//     }, function() {
+//         $(this).css("background", "white")
+//     })
+//Javier's solution:
+//     $(".square").hover(function() {
+//         console.log($(this).attr('data-color'));
+//         const $targetColor = $(this).attr('data-color');
+//         $(this).css('background', $targetColor)
+//     }, function() {
+//         $(this).css('background', '');
+//     });
+//Vanilla javaScript solution:
+// document.querySelectorAll(".square")
+//     forEach(function(element) {
+//         element.addEventListener("mouseenter", function(event) {
+//             const targetColor = event.target.dataset.color;
+//             event.target.style.backgroundColor = targetColor
+//         });
+//         element.addEventListener("mouseleave", function(event) {
+//             event.target.style.backgroundColor = '';
+//         });
+//     });
+
+
 //jquery to click button and change color of square
 //     $('#changeColor').click(function() {
 //         $('#square').css('background-color', 'rebeccapurple ');
 //     })
 //DOM to click button and change color of square
-    var changeColorButton = document.querySelector('#changeColor');
-    changeColorButton.addEventListener('click', function() {
-    document.getElementById("square").style.backgroundColor = "rebeccapurple";
-    })
-//jquery reset button to turn square back to gray
-$('#reset').click(function () {
-    // $('#square').css('background', 'gray')
-    //could use location.reload() to reload page
-    location.reload()
-})
+//     var changeColorButton = document.querySelector('#changeColor');
+//     changeColorButton.addEventListener('click', function() {
+//     document.getElementById("square").style.backgroundColor = "rebeccapurple";
+//     })
+// //jquery reset button to turn square back to gray
+// $('#reset').click(function () {
+//     // $('#square').css('background', 'gray')
+//     //could use location.reload() to reload page
+//     location.reload()
+// })
 //DOM reset button to turn square back to gray
 //     var resetButton = document.querySelector('#reset');
 //     resetButton.addEventListener('click', function() {
