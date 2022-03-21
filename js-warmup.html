@@ -9,23 +9,47 @@
         /*        height: 200px;*/
         /*        background-color: gray;*/
         /*}*/
+        /*.square {*/
+        /*    width: 200px;*/
+        /*    height: 200px;*/
+        /*    border: 1px solid black;*/
+        /*}*/
+
+        #square {
+            width: 200px;
+            height: 200px;
+            background-color: gray;
+        }
         .square {
             width: 200px;
             height: 200px;
             border: 1px solid black;
         }
+        .yellow {
+            background-color: yellow;
+        }
+        </style>
+
     </style>
 </head>
 <!--    <h1>Good Morning!</h1>-->
 <!--        <button>Press if after 12pm</button>-->
 
-<body>
-<div class="square" id="square1" data-color="blue"></div>
-<div class="square" id="square2" data-color="red"></div>
-<div class="square" id="square3" data-color="green"></div>
-<!--<div id="square"></div>-->
-<!--<button id="changeColor">Change Color</button><br>-->
-<button id="reset">Reset</button>
+<!--<body>-->
+<!--<div class="square" id="square1" data-color="blue"></div>-->
+<!--<div class="square" id="square2" data-color="red"></div>-->
+<!--<div class="square" id="square3" data-color="green"></div>-->
+<!--&lt;!&ndash;<div id="square"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;<button id="changeColor">Change Color</button><br>&ndash;&gt;-->
+<!--<button id="reset">Reset</button>-->
+
+<div id="changingColors">
+    <h2>The squares that change colors</h2>
+    <div class="square" id="yellow"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+</div>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script>
 //3 squares added.  create code to hover over each square and change color, and return to white after unhover.
@@ -88,6 +112,23 @@
 //     //could use location.reload() to reload page
 //         location.reload()
 //     })
+
+//3/21/22 warmup jQuery:
+// $('#changingColors .square').on('click', function() {$(this).toggleClass('yellow')}
+// )
+
+//Vanilla
+// const changingColorSquares = document.querySelectorAll('#changingColors .square');
+//
+// function toggleColor(e){
+//     e.target.style.backgroundColor === "" ? e.target.style.backgroundColor = 'yellow' : e.target.style.backgroundColor = "";
+// }
+// changingColorSquares.forEach(square => square.addEventListener('click', toggleColor));
+
+
+
+
+
 </script>
     <script src="js/js-warmup.js"></script>
 </body>
