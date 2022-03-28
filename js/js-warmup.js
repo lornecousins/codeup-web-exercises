@@ -688,3 +688,47 @@
 //Done in HTML
 
 //3/21/22 warmup
+// $('#changingColors .square').on('click', function() {$(this).toggleClass('yellow')}
+// )
+
+//Vanilla
+// const changingColorSquares = document.querySelectorAll('#changingColors .square');
+//
+// function toggleColor(e){
+//     e.target.style.backgroundColor === "" ? e.target.style.backgroundColor = 'yellow' : e.target.style.backgroundColor = "";
+// }
+// changingColorSquares.forEach(square => square.addEventListener('click', toggleColor));
+
+// 3/28/22 warmnup:
+// Create a function, encodeStr, that takes in a string and returns the string of characters with the following substitutions:
+//     ‘a’ or ‘A’ becomes ‘@’
+// ‘i’ or ‘I’ becomes ‘1’
+// ‘s’ or ‘S’ becomse ‘$’
+   //split the string into array of characters
+   //map over them to produce a return value that changes the 3 characters and returns the current character, otherwise
+   //join characters together into our final output
+function encodeStr(str) {
+   return str.split('').map(char => {
+      if (char.toLowerCase() === 'a') {
+         return '@';
+      } else if (char.toLowerCase() === 's') {
+         return '$';
+      } else if (char.toLowerCase() === 'i') {
+         return 1;
+      }  else {
+         return char;
+      }
+   }).join('');
+}
+
+console.log(encodeStr('apple'));
+console.log(encodeStr('codeup'));
+console.log(encodeStr('SASS'));
+console.log(encodeStr('bike'));
+//cousld also use:
+// function encodeStr(str){
+//    str = str.replace(/[aA]/g, "@");
+//    str = str.replace(/[iI]/g, "1");
+//    str = str.replace(/[sS]/g, "$");
+//    return str;
+// }
