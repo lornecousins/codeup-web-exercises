@@ -707,24 +707,24 @@
    //split the string into array of characters
    //map over them to produce a return value that changes the 3 characters and returns the current character, otherwise
    //join characters together into our final output
-function encodeStr(str) {
-   return str.split('').map(char => {
-      if (char.toLowerCase() === 'a') {
-         return '@';
-      } else if (char.toLowerCase() === 's') {
-         return '$';
-      } else if (char.toLowerCase() === 'i') {
-         return 1;
-      }  else {
-         return char;
-      }
-   }).join('');
-}
-
-console.log(encodeStr('apple'));
-console.log(encodeStr('codeup'));
-console.log(encodeStr('SASS'));
-console.log(encodeStr('bike'));
+// function encodeStr(str) {
+//    return str.split('').map(char => {
+//       if (char.toLowerCase() === 'a') {
+//          return '@';
+//       } else if (char.toLowerCase() === 's') {
+//          return '$';
+//       } else if (char.toLowerCase() === 'i') {
+//          return 1;
+//       }  else {
+//          return char;
+//       }
+//    }).join('');
+// }
+//
+// console.log(encodeStr('apple'));
+// console.log(encodeStr('codeup'));
+// console.log(encodeStr('SASS'));
+// console.log(encodeStr('bike'));
 //cousld also use:
 // function encodeStr(str){
 //    str = str.replace(/[aA]/g, "@");
@@ -732,3 +732,68 @@ console.log(encodeStr('bike'));
 //    str = str.replace(/[sS]/g, "$");
 //    return str;
 // }
+
+//3/29/22
+//Write a function, returnMostCommonVowel, that takes in a string and returns the most common vowel in the string.
+// Assume the characters in the string are all lowercase and only 'a' 'e' 'i' 'o' 'u' count as vowels. Return the most common vowel from the string.
+//
+// If the highest vowel count is shared between multiple vowels, return the first vowel alphabetically. (2 'a's and 2 'e's should 'a')
+//
+// If no vowels are in the string return false.
+// function returnMostCommonVowel(str) {
+//     let vowels = /[aeiou]/gi;
+//     let result = str.match(vowels);
+//     if (result === 0) {
+//         return false;
+//     } if (result > 0) {
+//         return math.max(vowels)
+//     }
+// }
+//
+// console.log(returnMostCommonVowel('codeup')); // returns 'e'
+// console.log(returnMostCommonVowel('leetcode')); // returns 'e'
+// console.log(returnMostCommonVowel('banana')); // returns 'a'
+// console.log(returnMostCommonVowel('asdf')); // returns 'a'
+// console.log(returnMostCommonVowel('nnnn')); // returns false
+// console.log(returnMostCommonVowel('hello')); // returns 'e'
+// console.log(returnMostCommonVowel('needful')); // returns 'e'
+
+//3/30/22
+//Create a function, returnAvgAdminSalary, that takes in an array of users and returns the average salary of all admins. Round to the nearest dollar.
+
+    //Example:
+
+// const users = [
+//     {
+//         name: 'Fred',
+//         isAdmin: true,
+//         salary: 20000
+//     },
+//     {
+//         name: 'Cathy',
+//         isAdmin: false,
+//         salary: 40000
+//     },
+//     {
+//         name: 'Sally',
+//         isAdmin: true,
+//         salary: 80000
+//     },
+//     {
+//         name: 'Kyle',
+//         isAdmin: true,
+//         salary: 50000
+//     },
+//     {
+//         name: 'Cynthia',
+//         isAdmin: false,
+//         salary: 100000
+//     }
+// ];
+//
+// function returnAvgAdminSalary() {
+//     const admins = users.filter(user => user.isAdmin);
+//     return admins.reduce((accum, curr) => accum + curr.salary, 0) / admins.length;
+// }
+//
+// console.log(returnAvgAdminSalary(users)); // returns 116666

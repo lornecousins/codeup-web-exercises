@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <title>JavaScript Warmup</title>
     <style>
-        /*#square {*/
-        /*        width: 200px;*/
-        /*        height: 200px;*/
-        /*        background-color: gray;*/
-        /*}*/
-        /*.square {*/
-        /*    width: 200px;*/
-        /*    height: 200px;*/
-        /*    border: 1px solid black;*/
-        /*}*/
+        #square {
+                width: 200px;
+                height: 200px;
+                background-color: gray;
+        }
+        .square {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
 
         #square {
             width: 200px;
@@ -32,16 +32,16 @@
 
     </style>
 </head>
-<!--    <h1>Good Morning!</h1>-->
-<!--        <button>Press if after 12pm</button>-->
+    <h1>Good Morning!</h1>
+        <button>Press if after 12pm</button>
 
-<!--<body>-->
-<!--<div class="square" id="square1" data-color="blue"></div>-->
-<!--<div class="square" id="square2" data-color="red"></div>-->
-<!--<div class="square" id="square3" data-color="green"></div>-->
-<!--&lt;!&ndash;<div id="square"></div>&ndash;&gt;-->
-<!--&lt;!&ndash;<button id="changeColor">Change Color</button><br>&ndash;&gt;-->
-<!--<button id="reset">Reset</button>-->
+<body>
+<div class="square" id="square1" data-color="blue"></div>
+<div class="square" id="square2" data-color="red"></div>
+<div class="square" id="square3" data-color="green"></div>
+<!--<div id="square"></div>-->
+<!--<button id="changeColor">Change Color</button><br>-->
+<button id="reset">Reset</button>
 
 <div id="changingColors">
     <h2>The squares that change colors</h2>
@@ -54,29 +54,29 @@
 <script>
 //3 squares added.  create code to hover over each square and change color, and return to white after unhover.
 //My solution:
-//     $('#square1').hover(function() {
-//         $(this).css("background", "blue")
-//     }, function() {
-//         $(this).css("background", "white")
-//     });
-//     $('#square2').hover(function() {
-//         $(this).css("background", "red")
-//     }, function() {
-//         $(this).css("background", "white")
-//     });
-//     $('#square3').hover(function() {
-//         $(this).css("background", "green")
-//     }, function() {
-//         $(this).css("background", "white")
-//     })
+    $('#square1').hover(function() {
+        $(this).css("background", "blue")
+    }, function() {
+        $(this).css("background", "white")
+    });
+    $('#square2').hover(function() {
+        $(this).css("background", "red")
+    }, function() {
+        $(this).css("background", "white")
+    });
+    $('#square3').hover(function() {
+        $(this).css("background", "green")
+    }, function() {
+        $(this).css("background", "white")
+    })
 //Javier's solution:
-//     $(".square").hover(function() {
-//         console.log($(this).attr('data-color'));
-//         const $targetColor = $(this).attr('data-color');
-//         $(this).css('background', $targetColor)
-//     }, function() {
-//         $(this).css('background', '');
-//     });
+    $(".square").hover(function() {
+        console.log($(this).attr('data-color'));
+        const $targetColor = $(this).attr('data-color');
+        $(this).css('background', $targetColor)
+    }, function() {
+        $(this).css('background', '');
+    });
 //Vanilla javaScript solution:
 // document.querySelectorAll(".square")
 //     forEach(function(element) {
